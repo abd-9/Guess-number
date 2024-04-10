@@ -2,12 +2,22 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  darkMode: "selector",
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  corePlugins: {
+    // Remove the Tailwind CSS preflight styles so it can use Material UI's preflight instead (CssBaseline).
+    preflight: false,
+  },
   future: {
     hoverOnlyWhenSupported: true,
   },
   theme: {
     extend: {
+      colors: {
+        background: "var(--primary-background)",
+        primaryBorder: "var(--primary-border)",
+      },
+
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -61,11 +71,11 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    plugin(({ addVariant }) => {
-      addVariant("radix-side-top", '&[data-side="top"]');
-      addVariant("radix-side-bottom", '&[data-side="bottom"]');
-    }),
+    // require("@tailwindcss/forms"),
+    // require("@tailwindcss/typography"),
+    // plugin(({ addVariant }) => {
+    //   addVariant("radix-side-top", '&[data-side="top"]');
+    //   addVariant("radix-side-bottom", '&[data-side="bottom"]');
+    // }),
   ],
 };
