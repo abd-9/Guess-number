@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import theme from "./theme";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ReduxProvider } from "@/app/redux/provider";
 export const metadata = {
   title: "Precedent - Building blocks for your Next.js project",
   description:
@@ -31,7 +32,7 @@ export default async function RootLayout({
       >
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {children}
+          <ReduxProvider>{children}</ReduxProvider>
         </ThemeProvider>
         {/* <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
          <Suspense fallback="...">
