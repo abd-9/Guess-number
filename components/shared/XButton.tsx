@@ -1,6 +1,7 @@
 import React from "react";
 import Button, { ButtonProps } from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
+import { colors } from "@mui/material";
 
 // Define custom button styles
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -8,7 +9,10 @@ const CustomButton = styled(Button)(({ theme }) => ({
   color: "white",
   backgroundSize: " 150% 200%",
   borderRadius: "9px",
-
+  "&:disabled": {
+    background: colors.grey[500],
+    color: "white",
+  },
   fontWeight: "bold",
   transition: "all .3s",
   "&:hover": {

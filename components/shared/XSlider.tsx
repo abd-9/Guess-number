@@ -1,5 +1,6 @@
 import * as React from "react";
 import Slider, {
+  SliderOwnProps,
   SliderProps,
   SliderThumb,
   SliderValueLabelProps,
@@ -9,9 +10,7 @@ import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import Box from "@mui/material/Box";
 
-interface PrettoSliderProps extends SliderProps {
-  color?: string;
-}
+interface PrettoSliderProps extends SliderOwnProps {}
 
 const PrettoSlider = styled(Slider)({
   color: "white",
@@ -65,7 +64,7 @@ export const XSlider: React.FC<PrettoSliderProps> = ({
       {...sliderProps}
       valueLabelDisplay="auto"
       aria-label="pretto slider"
-      defaultValue={20}
+      // defaultValue={20}
     />
   );
 };

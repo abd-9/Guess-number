@@ -18,21 +18,17 @@ import {
   TableRow,
   styled,
 } from "@mui/material";
+
 import { FC } from "react";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import Person3Icon from "@mui/icons-material/Person3";
 import AddAlarmIcon from "@mui/icons-material/AddAlarm";
+import { PlayerRound } from "@/app/redux/features/game/type";
+import { useSelector } from "react-redux";
+import { useAppSelector } from "@/app/redux/hooks";
 function createData(name: string, calories: number, fat: number) {
   return { name, calories, fat };
 }
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0),
-  createData("Ice cream sandwich", 237, 9.0),
-  createData("Eclair", 262, 16.0),
-  createData("Eclair", 262, 16.0),
-  createData("Cupcake", 305, 3.7),
-];
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
@@ -43,7 +39,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-export default function RankSection() {
+export default function RankSection({
+  hideData,
+}: {
+  data: PlayerRound[];
+  hideData: Boolean;
+}) {
+  const data = useAppSelector((state) => state.gameReducer.players);
   return (
     <TableContainer
       sx={{ maxHeight: 180 }}
@@ -59,16 +61,19 @@ export default function RankSection() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {data.map((row, index) => (
             <StyledTableRow
-              key={row.name}
+              key={row.name + index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
+                {index + 1}
+              </TableCell>
+              <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell>{row.calories}</TableCell>
-              <TableCell>{row.fat}</TableCell>
+              <TableCell>{hideData ? "-" : row.points}</TableCell>
+              {/* <TableCell>{hideData ? "-" : row.multiplier}</TableCell> */}
             </StyledTableRow>
           ))}
         </TableBody>

@@ -18,6 +18,7 @@ import {
   TableRow,
   styled,
 } from "@mui/material";
+import { PlayerRound } from "@/app/redux/features/game/type";
 
 function createData(name: string, calories: number, fat: number) {
   return { name, calories, fat };
@@ -40,7 +41,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-export default function ActiveRankSection() {
+export default function ActiveRankSection({
+  data,
+  hideData,
+}: {
+  data: PlayerRound[];
+  hideData: Boolean;
+}) {
   return (
     <TableContainer
       sx={{ height: 200 }}
@@ -56,16 +63,16 @@ export default function ActiveRankSection() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {data.map((row, index) => (
             <StyledTableRow
-              key={row.name}
+              key={row.name + index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell>{row.calories}</TableCell>
-              <TableCell>{row.fat}</TableCell>
+              <TableCell>{hideData ? "-" : row.placedPoint}</TableCell>
+              <TableCell>{hideData ? "-" : row.multiplier}</TableCell>
             </StyledTableRow>
           ))}
         </TableBody>

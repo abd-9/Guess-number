@@ -35,7 +35,7 @@ export default function ChatSection() {
         className=" flex flex-row  gap-2 bg-gray-600  p-2"
         style={{ flexGrow: "0" }}
       >
-        <TextField size="small" fullWidth label="fullWidth" id="fullWidth" />
+        <TextField size="small" fullWidth label="Message" id="fullWidth" />
         <XButton size="small" variant="contained" color="secondary">
           Send
         </XButton>

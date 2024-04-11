@@ -1,19 +1,69 @@
-"use client";
+import { OutlinedInput } from "@mui/material";
+import React from "react";
+import { useForm } from "react-hook-form";
+import XButton from "../shared/XButton";
 
-import { Session } from "next-auth";
-import { Button, Grid, Input, OutlinedInput } from "@mui/material";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { Player } from "@/app/redux/features/game/type";
+import { useDispatch } from "react-redux";
+import { User, loginUser } from "@/app/redux/features/auth";
 
-export default function LoginSection({ session }: { session: Session | null }) {
-  // const scrolled = useScroll(50);
+// Define interfaces
+
+// Define validation schema
+const schema = yup.object().shape({
+  name: yup.string().required("Name is required"),
+  roomId: yup.string().required("Room ID is required"),
+});
+
+export default function LoginSection() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: { roomId: "room-1" },
+  });
+  const dispatch = useDispatch();
+
+  const onSubmit = (data: Partial<User>) => {
+    dispatch(loginUser(data));
+
+    console.log(data);
+  };
+  const watchedName = watch("name");
   return (
-    <div
-      className={` flex h-full w-full flex-col items-center justify-center gap-3 align-middle transition-all`}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={`flex h-full w-full flex-col items-center justify-center gap-3 rounded-xl border-2  border-primaryBorder bg-background   p-4  align-middle transition-all`}
     >
-      <h2>Welcome</h2>
-      <OutlinedInput size="small" className="w-full"></OutlinedInput>
-      <Button variant="contained" color="secondary" className="w-full">
-        Accept{" "}
-      </Button>
-    </div>
+      <h1 className="text-2xl font-bold">Welcome</h1>
+
+      <OutlinedInput
+        size="small"
+        placeholder="Enter Name"
+        className="w-full"
+        error={Boolean(errors.name?.message)}
+        {...register("name")}
+      />
+      <OutlinedInput
+        size="small"
+        placeholder="Room ID"
+        className="w-full"
+        error={Boolean(errors.roomId?.message)}
+        {...register("roomId")}
+      />
+      <XButton
+        disabled={!Boolean(watchedName)}
+        variant="contained"
+        type="submit"
+        className="w-full"
+      >
+        Accept
+      </XButton>
+    </form>
   );
 }
