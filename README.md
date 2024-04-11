@@ -1,12 +1,11 @@
   <h1 align="center">Guess Number Game</h1>
 
   <h3 align="center">First page </h3>
-
-<img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number-2.png?raw=true" alt="Steven Tey />
+<img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number-2.png?raw=true"  />
 
   <h3 align="center">Second page </h3>
 
-<img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number.png?raw=true" alt="Steven Tey />
+<img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number.png?raw=true"  />
 
 <p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
