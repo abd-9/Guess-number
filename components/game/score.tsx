@@ -7,16 +7,28 @@ import { Session } from "next-auth";
 import { Button, Grid, Input, OutlinedInput } from "@mui/material";
 import { FC } from "react";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
-import Person3Icon from '@mui/icons-material/Person3';
-import AddAlarmIcon from '@mui/icons-material/AddAlarm';
+import Person3Icon from "@mui/icons-material/Person3";
+import AddAlarmIcon from "@mui/icons-material/AddAlarm";
 export default function ScoreBar() {
   return (
     <div
-      className={` grid h-full w-full grid-flow-col grid-cols-3 flex-col items-center justify-center gap-6 align-middle transition-all`}
+      className={` grid h-full w-full grid-flow-col grid-cols-3 flex-col items-center justify-center gap-6 align-middle `}
     >
-      <StatisticItem value="1000" icon={<MilitaryTechIcon  className='text-white' fontSize='large'/>} title="Pints" />
-      <StatisticItem value="Tomas" icon={<Person3Icon className='text-white' fontSize='large'/>} title="Pints" />
-      <StatisticItem value="21:30" icon={<AddAlarmIcon className='text-white' fontSize='large'/>} title="Pints" />
+      <StatisticItem
+        value="1000"
+        icon={<MilitaryTechIcon className="text-white" fontSize="large" />}
+        title="Pints"
+      />
+      <StatisticItem
+        value="Tomas"
+        icon={<Person3Icon className="text-white" fontSize="large" />}
+        title="Pints"
+      />
+      <StatisticItem
+        value="21:30"
+        icon={<AddAlarmIcon className="text-white" fontSize="large" />}
+        title="Pints"
+      />
     </div>
   );
 }
@@ -34,8 +46,10 @@ const StatisticItem: FC<IStatisticItem> = ({
   icon,
 }) => {
   return (
-    <div className="cols-col-span-1 relative h-full  flex flex-row items-center  rounded-xl align-middle bg-gradient-to-r from-black to-gray-500 ">
-      {icon ?<div className="  absolute left-3 ">{icon}</div>: (
+    <div className="cols-col-span-1 relative flex  h-full flex-row items-center  rounded-xl bg-gradient-to-r from-[#171b24] to-[#232937] align-middle ">
+      {icon ? (
+        <div className="absolute left-3 ">{icon}</div>
+      ) : (
         <img
           src={iconUrl}
           alt={title}

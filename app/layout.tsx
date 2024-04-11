@@ -24,7 +24,11 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable) + " dark h-screen"}>
+      <body
+        className={
+          cx(sfPro.variable, inter.variable) + " dark h-screen bg-[#141b23]"
+        }
+      >
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {children}

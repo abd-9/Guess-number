@@ -6,7 +6,7 @@ module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   corePlugins: {
     // Remove the Tailwind CSS preflight styles so it can use Material UI's preflight instead (CssBaseline).
-    preflight: false,
+    // preflight: false,
   },
   future: {
     hoverOnlyWhenSupported: true,

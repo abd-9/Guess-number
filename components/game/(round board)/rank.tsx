@@ -18,10 +18,7 @@ import {
   TableRow,
   styled,
 } from "@mui/material";
-import { FC } from "react";
-import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
-import Person3Icon from "@mui/icons-material/Person3";
-import AddAlarmIcon from "@mui/icons-material/AddAlarm";
+
 function createData(name: string, calories: number, fat: number) {
   return { name, calories, fat };
 }
@@ -43,19 +40,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-export default function RankSection() {
+export default function ActiveRankSection() {
   return (
     <TableContainer
-      sx={{ maxHeight: 180 }}
+      sx={{ height: 200 }}
       component={Paper}
-      className="no-scrollbar"
+      className="  relative overflow-auto rounded-lg border-2 border-primaryBorder"
     >
-      <Table size="small" stickyHeader aria-label="simple table">
+      <Table size="small" stickyHeader className=" ">
         <TableHead>
           <TableRow>
-            <TableCell>NO.</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Score</TableCell>
+            <TableCell>Point</TableCell>
+            <TableCell>Multiplier</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

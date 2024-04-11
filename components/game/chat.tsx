@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { FC } from "react";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
+import XButton from "../shared/XButton";
 
 export default function ChatSection() {
   return (
@@ -35,9 +36,9 @@ export default function ChatSection() {
         style={{ flexGrow: "0" }}
       >
         <TextField size="small" fullWidth label="fullWidth" id="fullWidth" />
-        <Button size="small" variant="contained" color="primary">
+        <XButton size="small" variant="contained" color="secondary">
           Send
-        </Button>
+        </XButton>
       </div>
     </div>
   );
