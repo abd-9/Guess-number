@@ -7,12 +7,7 @@
 
 <img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number.png?raw=true"  />
 
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#one-click-deploy"><strong>One-click Deploy</strong></a> ·
-  <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
-  <a href="#author"><strong>Author</strong></a>
-</p>
+
 <br/>
 
 ## Introduction
@@ -28,12 +23,6 @@ The assignment video <a href="https://github.com/abd-9/Guess-number/blob/main/pu
 - [Auth.js](https://authjs.dev/) – Handle user authentication with ease with providers like Google, Twitter, GitHub, etc.
  
 
-### Platforms
-
-- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
-- [Vercel Postgres](https://vercel.com/postgres) – Serverless Postgres at the Edge
-
- 
 
 ### Hooks and Utilities
 
@@ -43,7 +32,7 @@ The assignment video <a href="https://github.com/abd-9/Guess-number/blob/main/pu
 - `nFormatter` – Format numbers with suffixes like `1.2k` or `1.2M`
 - `capitalize` – Capitalize the first letter of a string
 - `truncate` – Truncate a string to a specified length
-- [`use-debounce`](https://www.npmjs.com/package/use-debounce) – Debounce a function call / state update
+
 
 ### Code Quality
 
