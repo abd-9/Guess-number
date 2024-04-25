@@ -6,6 +6,9 @@
   <h3 align="center">Second page </h3>
 
 <img src="https://github.com/abd-9/Guess-number/blob/main/public/Guess-Number.png?raw=true"  />
+  <h3 align="center">Origin Page </h3>
+
+<img src="https://github.com/abd-9/Guess-number/blob/main/public/origin.png?raw=true"  />
 
 
 <br/>
