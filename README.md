@@ -17,25 +17,10 @@
 
 ## Introduction
 
-Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project.
+Assessment for senior frontend position. 
+The assignment video <a href="https://github.com/abd-9/Guess-number/blob/main/public/Guess The Number Assessment v12-.mp4" target="_blank">Here</a>.
 
-## One-click Deploy
 
-You can deploy this template to Vercel with the button below:
-
-You can also clone & create this repo locally with the following command:
-
-```bash
-npx create-next-app precedent --example "https://github.com/steven-tey/precedent"
-```
-
-Then, install the dependencies with your package manager of choice:
-
-```bash
-npm i
-yarn
-pnpm i
-```
  
 ### Frameworks
 
